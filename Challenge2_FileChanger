@@ -1,1 +1,57 @@
-Place Holder
+import re
+file = 'C:\\Users\\lpg677\\Downloads\\RAND\\RAND\\MP_N_EXT_RAND_0002_sample.txt'
+file1 = 'C:\\Users\\lpg677\\Downloads\\RAND\\RAND\\MP_N_EXT_RAND_0001_sample.txt'
+writingFile = []
+with open(file) as fp:
+    line = fp.readline()
+    cnt = 1 
+    index_Line = re.split("\s+", line)
+    loc1_index = 0
+    loc2_index = 0
+    mom = 0
+    dad = 0
+    proband_index = 0
+    for word in index_Line:
+        if word == "LOC_01":
+            break 
+        else: 
+            loc1_index+=1
+    for word in index_Line:
+        if word == "LOC_02":
+            break 
+        else: 
+            loc2_index+=1
+    for word in index_Line:
+        if word == "DAD":
+            break 
+        else: 
+            dad+=1
+    for word in index_Line:
+        if word == "MOM":
+            break 
+        else: 
+            mom+=1
+    for word in index_Line:
+        if word == "IsProband":
+            break 
+        else: 
+            proband_index+=1
+    while line:
+        split_Line = re.split("\s+", line)  
+        rules = [split_Line[loc1_index] != 'A2/A2', split_Line[loc1_index] != 'A1/A1', split_Line[loc2_index] != 'M1/M1', split_Line[loc2_index] != 'M2/M2', split_Line[mom] != '-1', split_Line[dad] != '-1', split_Line[mom] != 'MOM']
+        if all(rules):
+            split_Line[proband_index] = '#'
+        writingFile.append(split_Line)
+        line = fp.readline()
+        cnt +=1
+#print(writingFile)
+
+with open(file1, "w") as f:
+    for item in writingFile:
+        counter = 0
+        for thing in item:
+            if counter == len(item):
+                f.write(thing +"\r\n")
+            else:
+                f.write(thing + " ")
+                counter +=1

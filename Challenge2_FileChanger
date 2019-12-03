@@ -46,7 +46,7 @@ with open(file) as fp:
         cnt +=1
 #print(writingFile)
 
-with open(file1, "w") as f:
+with open(file, "w") as f:
     for item in writingFile:
         counter = 0
         for thing in item:

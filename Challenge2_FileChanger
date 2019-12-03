@@ -51,7 +51,7 @@ with open(file1, "w") as f:
         counter = 0
         for thing in item:
             if counter == len(item):
-                f.write(thing +"\r\n")
+                f.write(thing +"\n")
             else:
                 f.write(thing + " ")
                 counter +=1

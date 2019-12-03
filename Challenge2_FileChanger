@@ -1,6 +1,6 @@
 import re
-file = 'C:\\Users\\lpg677\\Downloads\\RAND\\RAND\\MP_N_EXT_RAND_0002_sample.txt'
-file1 = 'C:\\Users\\lpg677\\Downloads\\RAND\\RAND\\MP_N_EXT_RAND_0001_sample.txt'
+file = 'MP_N_EXT_RAND_0002_sample.txt'
+file1 = 'MP_N_EXT_RAND_0001_sample.txt'
 writingFile = []
 with open(file) as fp:
     line = fp.readline()

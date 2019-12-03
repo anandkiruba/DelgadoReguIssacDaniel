@@ -1,6 +1,6 @@
 import re
-file = 'MP_N_EXT_RAND_0002_sample.txt'
-file1 = 'MP_N_EXT_RAND_0001_sample.txt'
+file = 'MP_N_EXT_RAND_0003_sample.txt'
+file2 = 'MP_N_EXT_RAND_0001_sample.txt'
 writingFile = []
 with open(file) as fp:
     line = fp.readline()
